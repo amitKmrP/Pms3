@@ -1,209 +1,82 @@
 import Head from 'next/head'
-
+import { Container, Flex, Box, IconButton, Center, Heading, FormControl, Input, Select, Button } from "@chakra-ui/react"
+import { CloseIcon } from '@chakra-ui/icons'
+import { Stack, HStack, VStack } from "@chakra-ui/react"
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+        <Flex className="mainDivId" bg='#DADADA' position='absolute' border='1px solid #DADADA' alignItems="center" justifyContent="center" >
+            <Flex className="subDivId" t='208px' l='249px' direction="column" borderRadius='8px' bg='#FFFFFF' position='absolute' >
+                <Flex justify='end'>
+                    <Box position='absolute' m='1%' w='10.67px' h='10.67px' mt='2.67px' mr='25.67'>
+                        <IconButton _hover='white' bg='transparent' >
+                            <CloseIcon border='0px solid rgba(0, 0, 0, 0.4);' />
+                        </IconButton>
+                    </Box>
+                </Flex>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+                <Center color='black' mt='10vh' mb='5vh'>
+                    <Heading position='absolute' w='192px' h='36px' t='262px' l='176px' length='36px' fontSize='30px' fontWeight='400' fontFamily='Lato' >Create Project</Heading>
+                </Center>
+                <form>
+                    <Container>
+                        <VStack
+                            mt='40px'
+                            id="mainStack"
+                            spacing={4}
+                            align="stretch"
+                        >
+                            <Box h="40px" id="projName">
+                            <FormControl id='projectName' mb='10px'>
+                            <Input  position='absolute'   _focus="{ boxShadow: 'none' }" bg='rgba(234, 234, 236, 0.6);'
+                                                 borderRadius='4px'   type="text"       placeholder='Project Name'   />
+                                                 </FormControl>
+                            </Box>
+                            <Box h="40px" id="orgName">
+                            <FormControl id='projectName' mb='10px'>
+                            <Select  bg='rgba(234, 234, 236, 0.6);' position='absolute' className="selectOption" _focus="{ boxShadow: 'none' }"
+                                                   borderRadius='4px'  onchange="this.className=this.options[this.selectedIndex].className"                                                  >
+                                                <option value="option1" selected >Organization</option>
+                                                <option value="option2">Priya Organisation</option>
+                                                <option value="option3">Printing Books Organization</option>
+                                            </Select>
+                            </FormControl>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+                            </Box>
+                            <Box h="40px" id="orgName" >
+                            <FormControl id='projectName' mb='10px'>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+                            <Select bg='rgba(234, 234, 236, 0.6);' position='absolute' className="selectOption" _focus="{ boxShadow: 'none' }" 
+                                                borderRadius='4px'       onchange="this.className=this.options[this.selectedIndex].className">
+                                                <option value="option1" selected>Template</option>
+                                                <option value="option2">Priya Organisation</option>
+                                                <option value="option3">Printing Books Organization</option>
+                                            </Select>
+                                            </FormControl>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+                            </Box>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+                            <Box h="40px" >
+                            <FormControl id='projectName' mb='10px'>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+                            <Flex justify='center' mt='20px' mb='5' ml="100px" id="butnsId">
+                                            <Button size="sm"  mr='1' onClick={() => { }} outline="none"
+                                               bg='#131923' borderRadius='5px' _hover="none" _focus="none" w='135px' h='40px' t='554px' l='597px'>
+                                               <Center id="btnText"> Create </Center>
+                                            </Button>
+                                            <Button ml='1' size="sm"  border='1px solid #8A8886' _hover="{bg:'none'}" _focus="{ boxShadow: 'none' }" w='135px' h='40px' t='554px' l='754px'borderRadius='5px' >
+                                            <Center id="btnText2"> Cancel</Center>
+                                            </Button>
+                                        </Flex>
+                                            </FormControl>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+                            </Box>
+                        </VStack>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+                    </Container>
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+                </form>
+            </Flex>
+        </Flex>
+    )
 }
